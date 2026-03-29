@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Plus, Users, DollarSign, Map, ShieldCheck, ChevronRight, LayoutDashboard, History, Settings, LogOut, LucideIcon, TrendingUp, MoreVertical, Edit2, Trash2, CheckCircle2 } from "lucide-react";
+import { 
+  LayoutDashboard, Map, Users, Settings, LogOut, Plus, TrendingUp, 
+  DollarSign, ShieldCheck, Check, X, Clock, Trash2, Zap, LucideIcon,
+  Edit2, MoreVertical, CheckCircle2, ChevronRight, History
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -20,10 +24,10 @@ const AdminDashboard = () => {
   };
 
   const stats = [
-    { label: "Active Revenue", value: "₹45.2L", icon: DollarSign, color: "text-emerald-400", trend: "+12.5%" },
-    { label: "Total Managed Flows", value: "24", icon: Map, color: "text-cyan-400", trend: "+4" },
-    { label: "Identity Counts", value: "1.2k", icon: Users, color: "text-purple-400", trend: "+120" },
-    { label: "Clearance Level", value: "L-9", icon: ShieldCheck, color: "text-amber-400", trend: "Elite" },
+    { label: "Active Revenue", value: "₹45.2L", icon: DollarSign, color: "text-emerald-500", trend: "+12.5%" },
+    { label: "Total Managed Flows", value: "24", icon: Map, color: "text-info", trend: "+4" },
+    { label: "Identity Counts", value: "1.2k", icon: Users, color: "text-orange-400", trend: "+120" },
+    { label: "Flow Efficiency", value: "98%", icon: Zap, color: "text-amber-500", trend: "Steady" },
   ];
 
   const recentTours = [
@@ -33,17 +37,17 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#05070a] pt-24 pb-12 px-6 lg:px-12 flex gap-8">
+    <div className="min-h-screen bg-background pt-24 pb-12 px-6 lg:px-12 flex gap-8">
       {/* Sidebar - Admin Navigation */}
-      <aside className="hidden lg:flex flex-col w-72 h-[calc(100vh-120px)] sticky top-24 glass rounded-[2.5rem] border border-white/5 p-8 justify-between shadow-2xl">
+      <aside className="hidden lg:flex flex-col w-72 h-[calc(100vh-120px)] sticky top-24 glass-card rounded-[2.5rem] border border-glass-border p-8 justify-between shadow-2xl">
          <div className="space-y-12">
             <div className="flex items-center gap-4 group">
-               <div className="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center p-2.5">
-                  <ShieldCheck className="h-full w-full text-purple-400" />
+               <div className="w-12 h-12 rounded-2xl bg-orange-500/20 flex items-center justify-center p-2.5">
+                  <ShieldCheck className="h-full w-full text-orange-400" />
                </div>
                <div className="flex flex-col leading-none">
-                  <span className="text-white font-bold">Admin Hub</span>
-                  <span className="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Super Clearance</span>
+                  <span className="text-foreground font-bold">Admin Hub</span>
+                  <span className="text-[10px] text-muted uppercase tracking-widest mt-1">Super Clearance</span>
                </div>
             </div>
 
@@ -57,7 +61,7 @@ const AdminDashboard = () => {
 
          <button 
            onClick={handleSignOut}
-           className="flex items-center gap-4 text-slate-500 hover:text-red-400 transition-colors p-3 rounded-2xl group"
+           className="flex items-center gap-4 text-muted hover:text-red-400 transition-colors p-3 rounded-2xl group"
          >
             <LogOut className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
             <span className="font-bold text-sm">Sign Out Admin</span>
@@ -69,13 +73,13 @@ const AdminDashboard = () => {
          {/* Top Header Section */}
          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-2">
-               <h1 className="text-4xl md:text-5xl font-bold font-heading">Control Panel</h1>
-               <p className="text-slate-400">Manage the global flow of Pravah Holidays.</p>
+               <h1 className="text-4xl md:text-5xl font-bold font-heading text-foreground">Control Panel</h1>
+               <p className="text-muted">Manage the global flow of Pravah Holidays.</p>
             </div>
             <Link 
               href="#"
               onClick={() => toast.success("Opening multi-step form...")}
-              className="bg-purple-500 hover:bg-purple-600 px-8 py-4 rounded-3xl font-bold text-white shadow-xl shadow-purple-500/20 flex items-center gap-3 transition-all active:scale-95 group"
+              className="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-3xl font-bold text-white shadow-xl shadow-orange-500/20 flex items-center gap-3 transition-all active:scale-95 group"
             >
                <Plus className="h-5 w-5 group-hover:rotate-90 transition-transform" />
                <span>Create New Journey</span>
@@ -90,19 +94,19 @@ const AdminDashboard = () => {
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ delay: idx * 0.1 }}
-                 className="p-8 glass-card rounded-[2.5rem] space-y-4 border border-white/5"
+                 className="p-8 glass-card rounded-[2.5rem] space-y-4 border border-glass-border"
               >
                  <div className="flex justify-between items-start">
-                    <div className={`p-4 bg-white/5 rounded-2xl ${stat.color}`}>
+                    <div className={`p-4 bg-background/50 rounded-2xl border border-glass-border ${stat.color}`}>
                        <stat.icon className="h-6 w-6" />
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full uppercase">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-500 bg-emerald-400/10 px-2 py-1 rounded-full uppercase">
                        <TrendingUp className="h-3 w-3" /> {stat.trend}
                     </div>
                  </div>
                  <div className="space-y-1">
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</span>
-                    <h3 className="text-3xl font-bold font-heading">{stat.value}</h3>
+                    <span className="text-xs font-bold text-muted uppercase tracking-widest">{stat.label}</span>
+                    <h3 className="text-3xl font-bold font-heading text-foreground">{stat.value}</h3>
                  </div>
               </motion.div>
             ))}
@@ -112,32 +116,32 @@ const AdminDashboard = () => {
          {activeView === 'overview' && (
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
               {/* Tour Management Table (Mockup) */}
-              <div className="md:col-span-2 glass rounded-[3rem] p-10 border border-white/5 space-y-8">
+              <div className="md:col-span-2 glass-card rounded-[3rem] p-10 border border-glass-border space-y-8 shadow-xl">
                  <div className="flex justify-between items-center">
-                    <h2 className="text-2xl font-bold font-heading">Recent Journey Streams</h2>
-                    <button className="text-xs font-bold uppercase tracking-widest text-cyan-400 hover:underline">View All Flows</button>
+                    <h2 className="text-2xl font-bold font-heading text-foreground">Recent Journey Streams</h2>
+                    <button className="text-xs font-bold uppercase tracking-widest text-orange-500 hover:underline">View All Flows</button>
                  </div>
                  <div className="space-y-4">
                     {recentTours.map((tour, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-6 rounded-3xl hover:bg-white/5 border border-transparent hover:border-white/10 transition-all group">
+                      <div key={idx} className="flex items-center justify-between p-6 rounded-3xl hover:bg-orange-500/5 border border-transparent hover:border-glass-border transition-all group">
                          <div className="flex items-center gap-5">
-                            <div className="w-16 h-16 rounded-2xl overflow-hidden glass">
+                            <div className="w-16 h-16 rounded-2xl overflow-hidden glass-card">
                                <img src={tour.image} alt={tour.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                             </div>
                             <div className="space-y-1">
-                               <h4 className="font-bold text-lg group-hover:text-cyan-400 transition-colors">{tour.title}</h4>
-                               <div className="flex items-center gap-4 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                               <h4 className="font-bold text-lg group-hover:text-orange-500 transition-colors text-foreground">{tour.title}</h4>
+                               <div className="flex items-center gap-4 text-xs font-bold text-muted uppercase tracking-widest">
                                   <span>₹{(tour.price/1000).toFixed(0)}k Base</span>
                                   <span>•</span>
-                                  <span className="text-cyan-400">{tour.bookings} booked</span>
+                                  <span className="text-orange-500">{tour.bookings} booked</span>
                                </div>
                             </div>
                          </div>
                          <div className="flex items-center gap-3">
-                            <button className="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors text-slate-300">
+                            <button className="p-3 bg-background/50 border border-glass-border rounded-xl hover:bg-orange-500/10 transition-colors text-muted hover:text-orange-500">
                                <Edit2 className="h-4 w-4" />
                             </button>
-                            <button className="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors text-slate-300">
+                            <button className="p-3 bg-background/50 border border-glass-border rounded-xl hover:bg-orange-500/10 transition-colors text-muted hover:text-orange-500">
                                <MoreVertical className="h-4 w-4" />
                             </button>
                          </div>
@@ -146,38 +150,38 @@ const AdminDashboard = () => {
                  </div>
               </div>
 
-              {/* Identity Verification Queue (Mockup) */}
-              <div className="glass rounded-[3rem] p-10 border border-white/5 space-y-8">
-                 <div className="flex flex-col space-y-1">
-                    <h2 className="text-2xl font-bold font-heading">Identity Queue</h2>
-                    <span className="text-xs font-bold uppercase tracking-widest text-amber-500">Awaiting Clearance</span>
-                 </div>
-                 <div className="space-y-6">
-                    {[1, 2, 3].map(i => (
-                      <div key={i} className="flex flex-col p-6 rounded-3xl bg-white/5 space-y-4 border border-white/5">
-                         <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs">U{i}</div>
-                            <div className="flex flex-col">
-                               <span className="text-sm font-bold">Explorer Identity #{i*452}</span>
-                               <span className="text-[10px] text-slate-500">Bali Tour Booking Request</span>
-                            </div>
-                         </div>
-                         <div className="grid grid-cols-2 gap-2">
-                            <button className="bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-[10px] font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
-                               <CheckCircle2 className="h-3 w-3" /> APPROVE
-                            </button>
-                            <button className="bg-red-500/10 hover:bg-red-500/20 text-red-500 text-[10px] font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
-                               <Trash2 className="h-3 w-3" /> REJECT
-                            </button>
-                         </div>
-                      </div>
-                    ))}
-                 </div>
-                 <button className="w-full py-4 text-xs font-bold text-slate-500 uppercase tracking-widest border border-white/10 rounded-2xl hover:bg-white/5 transition-colors">
-                    Manage Full Fleet
-                 </button>
-              </div>
-           </div>
+               {/* Identity Verification Queue (Mockup) */}
+               <div className="glass-card rounded-[3rem] p-10 border border-glass-border space-y-8 shadow-xl">
+                  <div className="flex flex-col space-y-1">
+                     <h2 className="text-2xl font-bold font-heading text-foreground">Identity Queue</h2>
+                     <span className="text-xs font-bold uppercase tracking-widest text-amber-500">Awaiting Clearance</span>
+                  </div>
+                  <div className="space-y-6">
+                     {[1, 2, 3].map(i => (
+                       <div key={i} className="flex flex-col p-6 rounded-3xl bg-background/50 space-y-4 border border-glass-border">
+                          <div className="flex items-center gap-4">
+                             <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center font-bold text-xs text-orange-400">U{i}</div>
+                             <div className="flex flex-col">
+                                <span className="text-sm font-bold text-foreground">Explorer Identity #{i*452}</span>
+                                <span className="text-[10px] text-muted">Bali Tour Booking Request</span>
+                             </div>
+                          </div>
+                          <div className="grid grid-cols-2 gap-2">
+                             <button className="bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-[10px] font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
+                                <CheckCircle2 className="h-3 w-3" /> APPROVE
+                             </button>
+                             <button className="bg-red-500/10 hover:bg-red-500/20 text-red-500 text-[10px] font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1">
+                                <Trash2 className="h-3 w-3" /> REJECT
+                             </button>
+                          </div>
+                       </div>
+                     ))}
+                  </div>
+                  <button className="w-full py-4 text-xs font-bold text-muted uppercase tracking-widest border border-glass-border rounded-2xl hover:bg-orange-500/10 transition-colors">
+                     Manage Full Fleet
+                  </button>
+               </div>
+            </div>
          )}
       </main>
     </div>
@@ -185,14 +189,14 @@ const AdminDashboard = () => {
 };
 
 const SidebarLink = ({ icon: Icon, label, active = false, onClick }: { icon: LucideIcon, label: string, active?: boolean, onClick?: () => void }) => (
-  <button 
+   <button 
     onClick={onClick}
     className={cn(
       "w-full flex items-center gap-4 p-4 rounded-2xl font-bold text-sm transition-all group",
-      active ? "bg-purple-500 text-white shadow-xl shadow-purple-500/20" : "text-slate-500 hover:text-white hover:bg-white/5"
+      active ? "bg-orange-500 text-white shadow-xl shadow-orange-500/20" : "text-muted hover:text-foreground hover:bg-orange-500/5"
     )}
   >
-    <Icon className={cn("h-5 w-5", active ? "text-white" : "group-hover:text-purple-400")} />
+    <Icon className={cn("h-5 w-5", active ? "text-white" : "group-hover:text-orange-400")} />
     <span>{label}</span>
   </button>
 );
