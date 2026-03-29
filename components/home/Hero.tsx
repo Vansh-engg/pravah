@@ -15,7 +15,6 @@ const Hero = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
-  const blur = useTransform(scrollYProgress, [0, 0.5], [0, 10]);
 
   return (
     <section 
@@ -24,7 +23,7 @@ const Hero = () => {
     >
       {/* 🌊 Cinematic Background Layer */}
       <motion.div 
-        style={{ opacity, scale, filter: `blur(${blur}px)` }}
+        style={{ opacity, scale }}
         className="absolute inset-0 z-0"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-background z-10" />
@@ -36,23 +35,9 @@ const Hero = () => {
       </motion.div>
 
       {/* ✨ Floating Prisms / Brand Glow */}
-      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-         <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.1, 0.2, 0.1]
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px]"
-         />
-         <motion.div 
-            animate={{ 
-              scale: [1, 1.3, 1],
-              opacity: [0.1, 0.3, 0.1]
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute -bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-info/20 rounded-full blur-[200px]"
-         />
+      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden hidden md:block">
+         <div className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] opacity-10" />
+         <div className="absolute -bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-info/20 rounded-full blur-[120px] opacity-10" />
       </div>
 
       {/* 🎬 Content Layer */}

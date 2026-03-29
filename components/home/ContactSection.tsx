@@ -35,7 +35,7 @@ const ContactSection = () => {
                 whileHover={{ y: -10 }}
                 className="flex flex-col items-center gap-6 p-8 glass-card border-white/10 rounded-[2.5rem]"
               >
-                <div className="p-5 bg-primary/20 backdrop-blur-3xl rounded-3xl border border-primary/30">
+                <div className="p-5 bg-primary/20 rounded-3xl border border-primary/30">
                   <Mail className="h-8 w-8 text-primary" />
                 </div>
                 <div className="space-y-1">
@@ -48,7 +48,7 @@ const ContactSection = () => {
                 whileHover={{ y: -10 }}
                 className="flex flex-col items-center gap-6 p-8 glass-card border-white/10 rounded-[2.5rem]"
               >
-                <div className="p-5 bg-primary/20 backdrop-blur-3xl rounded-3xl border border-primary/30">
+                <div className="p-5 bg-primary/20 rounded-3xl border border-primary/30">
                   <Phone className="h-8 w-8 text-primary" />
                 </div>
                 <div className="space-y-1">
@@ -61,7 +61,7 @@ const ContactSection = () => {
                 whileHover={{ y: -10 }}
                 className="flex flex-col items-center gap-6 p-8 glass-card border-white/10 rounded-[2.5rem]"
               >
-                <div className="p-5 bg-primary/20 backdrop-blur-3xl rounded-3xl border border-primary/30">
+                <div className="p-5 bg-primary/20 rounded-3xl border border-primary/30">
                   <MapPin className="h-8 w-8 text-primary" />
                 </div>
                 <div className="space-y-1">
