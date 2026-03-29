@@ -36,9 +36,9 @@ export default function RootLayout({
           <div className="relative isolate min-h-screen">
             {/* Animated Background Blobs - Theme Aware */}
             <div className="fixed inset-0 -z-10 bg-background transition-colors duration-300">
-               <div className="absolute top-0 -left-4 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-               <div className="absolute top-0 -right-4 w-72 h-72 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
-               <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
+               <div className="absolute top-0 -left-4 w-72 h-72 bg-orange-500 rounded-full filter blur-3xl opacity-10 md:animate-blob" />
+               <div className="absolute top-0 -right-4 w-72 h-72 bg-amber-500 rounded-full filter blur-3xl opacity-10 md:animate-blob animation-delay-2000" />
+               <div className="absolute -bottom-8 left-20 w-72 h-72 bg-yellow-500 rounded-full filter blur-3xl opacity-10 md:animate-blob animation-delay-4000" />
             </div>
             
             <Navbar />

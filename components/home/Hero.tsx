@@ -63,7 +63,7 @@ const Hero = () => {
              initial={{ opacity: 0, scale: 0.9 }}
              animate={{ opacity: 1, scale: 1 }}
              transition={{ duration: 1, delay: 0.2 }}
-             className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass-card border border-white/20 shadow-2xl backdrop-blur-3xl animate-pulse"
+             className="inline-flex items-center gap-2 px-6 py-2 rounded-full glass-card border border-white/20 shadow-2xl"
           >
              <Compass className="h-4 w-4 text-primary" />
              <p className="text-white text-xs font-bold uppercase tracking-[0.3em]">Redefining the Pravah</p>

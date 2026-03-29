@@ -104,7 +104,7 @@ const Navbar = () => {
       <div className="flex-1">
          <Link href="/" className="flex items-center gap-3 group outline-none w-fit">
             <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl">
-               <img src="/logo.png" alt="Pravah Holiday Logo" className="w-full h-full object-contain" />
+               <img src="/logo.PNG" alt="Pravah Holiday Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col -space-y-1">
                <span className="text-2xl font-bold font-heading tracking-tighter transition-colors duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">

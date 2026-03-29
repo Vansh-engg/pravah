@@ -70,7 +70,7 @@ const DestinationsPage = () => {
           alt="Travel Background" 
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[10000ms] scale-110 group-hover:scale-100"
         />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-black/60" />
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div

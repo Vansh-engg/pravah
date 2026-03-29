@@ -49,7 +49,7 @@ const AboutPage = () => {
           alt="HD Travel Backdrop" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-black/80" />
       </div>
 
       <div className="relative z-10 flex flex-col">
@@ -61,8 +61,7 @@ const AboutPage = () => {
             alt="Traveling Background" 
             className="w-full h-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-white" />
-          <div className="absolute inset-0 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
